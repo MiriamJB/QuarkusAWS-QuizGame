@@ -10,7 +10,7 @@ function App() {
             const text = await response.text();
             setMessage(text);
         };
-        fetchMessage().then(() => console.log("Message fetched"));
+        fetchMessage().then(() => console.log("Message done fetching: ", message));
     }, []);
 
     return (
