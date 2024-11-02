@@ -37,10 +37,10 @@
             <version>2.4.8</version>
         </dependency>
         <!-- AWS extension: used with SAM to deploy to AWS -->
-<!--        <dependency>-->
-<!--            <groupId>io.quarkus</groupId>-->
-<!--            <artifactId>quarkus-amazon-lambda-http</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-amazon-lambda-http</artifactId>
+        </dependency>
         <!-- RESTEasy: used to create REST-ful web services for our API -->
         <dependency>
             <groupId>io.quarkus</groupId>
