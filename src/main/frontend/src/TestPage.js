@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {API_URL} from "./config";
 
-function App() {
+function TestPage() {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
@@ -15,11 +15,11 @@ function App() {
 
     return (
         <div>
-            <h1>Message from the backend:</h1>
+            <h1>TestPage</h1>
             <p>{message}</p>
         </div>
     );
 
 }
 
-export default App;
+export default TestPage;

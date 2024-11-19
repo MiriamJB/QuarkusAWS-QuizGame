@@ -101,5 +101,9 @@ Resource: [Building a React App with Amplify (Gen 1), Cognito, and CI/CD](https:
   - Access-Control-Allow-Headers
 - Deploy to the new stage
 
+### Configure Cognito
+- `amplify add auth`
+- `npm install aws-amplify`
+
 ### Misc. Notes:
 - **Ctrl + Alt + L**: Format code in IntelliJ IDEA
