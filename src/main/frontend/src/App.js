@@ -1,25 +1,21 @@
-import React, {useEffect, useState} from "react";
-import {API_URL} from "./config";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
+import HomePage from './components/HomePage';
+import ProfilePage from './components/ProfilePage';
+import Navbar from './components/Navbar';
 
 function App() {
-    const [message, setMessage] = useState("");
-
-    useEffect(() => {
-        const fetchMessage = async () => {
-            const response = await fetch(`${API_URL}/api/hello`);
-            const text = await response.text();
-            setMessage(text);
-        };
-        fetchMessage().then(() => console.log("Message done fetching"));
-    }, []);
-
     return (
-        <div>
-            <h1>Message from the backend:</h1>
-            <p>{message}</p>
-        </div>
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/home" element={<HomePage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+            </Routes>
+        </Router>
     );
-
 }
 
 export default App;

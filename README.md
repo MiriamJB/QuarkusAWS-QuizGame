@@ -71,7 +71,7 @@ Starter code generated from [the Quarkus website](https://code.quarkus.io/).
 - Run the commands in the **Deploy to AWS Lambda** section
 
 ### Deploying to AWS Amplify:
-- Configure the Amplify CLI
+- Configure the Amplify CLI (only done once)
   - `amplify configure`
   - Sign in
   - Select a region
@@ -103,7 +103,9 @@ Resource: [Building a React App with Amplify (Gen 1), Cognito, and CI/CD](https:
 
 ### Configure Cognito
 - `amplify add auth`
+- `amplify push`
 - `npm install aws-amplify`
+- `npm install aws-amplify @aws-amplify/ui-react`
 
 ### Misc. Notes:
 - **Ctrl + Alt + L**: Format code in IntelliJ IDEA

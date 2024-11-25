@@ -10,6 +10,11 @@
       "StackName": "amplify-mjbquizgame-dev-ee35a",
       "StackId": "arn:aws:cloudformation:ap-south-1:730335528058:stack/amplify-mjbquizgame-dev-ee35a/b681e9f0-98b3-11ef-b81c-0635857f155f",
       "AmplifyAppId": "d1hx2a0ylra4qq"
+    },
+    "categories": {
+      "auth": {
+        "mjbquizgame91a06262": {}
+      }
     }
   }
 }
