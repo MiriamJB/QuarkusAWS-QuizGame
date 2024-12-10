@@ -1,15 +1,20 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-mjbquizgame-dev-ee35a-authRole",
-      "UnauthRoleArn": "arn:aws:iam::730335528058:role/amplify-mjbquizgame-dev-ee35a-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::730335528058:role/amplify-mjbquizgame-dev-ee35a-authRole",
+      "AuthRoleName": "amplify-mjbquizgame-dev-49f52-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730335528058:role/amplify-mjbquizgame-dev-49f52-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730335528058:role/amplify-mjbquizgame-dev-49f52-authRole",
       "Region": "ap-south-1",
-      "DeploymentBucketName": "amplify-mjbquizgame-dev-ee35a-deployment",
-      "UnauthRoleName": "amplify-mjbquizgame-dev-ee35a-unauthRole",
-      "StackName": "amplify-mjbquizgame-dev-ee35a",
-      "StackId": "arn:aws:cloudformation:ap-south-1:730335528058:stack/amplify-mjbquizgame-dev-ee35a/b681e9f0-98b3-11ef-b81c-0635857f155f",
-      "AmplifyAppId": "d1hx2a0ylra4qq"
+      "DeploymentBucketName": "amplify-mjbquizgame-dev-49f52-deployment",
+      "UnauthRoleName": "amplify-mjbquizgame-dev-49f52-unauthRole",
+      "StackName": "amplify-mjbquizgame-dev-49f52",
+      "StackId": "arn:aws:cloudformation:ap-south-1:730335528058:stack/amplify-mjbquizgame-dev-49f52/dab8e130-b72f-11ef-a3cd-0a34451db1f9",
+      "AmplifyAppId": "dqpc2q5la52bo"
+    },
+    "categories": {
+      "auth": {
+        "mjbquizgame22fe1871": {}
+      }
     }
   }
 }

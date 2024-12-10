@@ -103,7 +103,15 @@ Resource: [Building a React App with Amplify (Gen 1), Cognito, and CI/CD](https:
 
 ### Configure Cognito
 - `amplify add auth`
-- `npm install aws-amplify`
+- `amplify push`
+- In the frontend: `npm install aws-amplify @aws-amplify/ui-react`
+- Copy **amplifyconfiguration.json** and **aws-exports.js** to the frontend
+- Add the following to the frontend **index.js** file:
+  ```javascript
+  import { Amplify } from 'aws-amplify';
+  import config from './amplifyconfiguration.json';
+  Amplify.configure(config);
+  ```
 
 ### Misc. Notes:
-- **Ctrl + Alt + L**: Format code in IntelliJ IDEA
+- **Ctrl + Alt + L**: Formats code in IntelliJ IDEA
