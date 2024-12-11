@@ -1,8 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ signOut, user }) => {
+    const navigate = useNavigate();
+
+    const handleSignOut = () => {
+        signOut();
+        navigate('/');
+    };
+
     return (
         <>
             <nav style={{display: 'flex', justifyContent: 'space-between', padding: 10}}>
@@ -10,11 +17,14 @@ const Navbar = () => {
                     Quiz Game App
                 </div>
                 <div>
-                    <Link to="/"> Home </Link>
+                    <Link to="/"> Landing Page </Link>
+                    <span> | </span>
+                    <Link to="/home"> Home </Link>
                     <span> | </span>
                     <Link to="/test"> Test </Link>
                     <span> | </span>
-                    <Link to="/auth"> Auth </Link>
+                    Hello, {user.username}
+                    <button onClick={handleSignOut}>Sign out</button>
                 </div>
             </nav>
             <hr/>
