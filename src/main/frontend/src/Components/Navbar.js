@@ -21,8 +21,6 @@ const Navbar = ({ signOut, user }) => {
                     <span> | </span>
                     <Link to="/home"> Home </Link>
                     <span> | </span>
-                    <Link to="/test"> Test </Link>
-                    <span> | </span>
                     Hello, {user.username}
                     <button onClick={handleSignOut}>Sign out</button>
                 </div>

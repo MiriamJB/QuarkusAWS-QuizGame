@@ -51,6 +51,16 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-resteasy-jackson</artifactId>
         </dependency>
+        <!-- Hibernate ORM Panache: used to interact with a database -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm-panache</artifactId>
+        </dependency>
+        <!-- JDBC MySQL: used to connect to a MySQL database -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-jdbc-mysql</artifactId>
+        </dependency>
         <!-- Other Quarkus extensions below (not sure what these do!) -->
         <dependency>
             <groupId>io.quarkus</groupId>

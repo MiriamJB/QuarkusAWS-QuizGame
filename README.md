@@ -112,6 +112,44 @@ Resource: [Building a React App with Amplify (Gen 1), Cognito, and CI/CD](https:
   import config from './amplifyconfiguration.json';
   Amplify.configure(config);
   ```
+- Authentication is controlled in the **AuthLayout.js** file
+
+## Connecting to an RDS Database
+- Open the **RDS** service in AWS
+- Create a new database
+- Recommended settings:
+  - Creation method: Standard create
+  - Engine: MySQL
+  - Template: Free tier
+  - Settings:
+    - Change the DB instance identifier
+    - Set the master username and password
+  - Connectivity:
+    - Public access: Yes
+    - VPC security group: MySQLPublic
+      - Inbound rules:
+        - Type: MYSQL/Aurora 
+        - Source: Anywhere IPv4
+      - Outbound rules:
+        - Type: All traffic 
+        - Destination: Anywhere IPv4
+- Connect to the database using MySQL Workbench (or another client):
+  - Hostname: RDS database endpoint
+  - Port: 3306
+  - Username: from the RDS database (probably 'admin')
+  - Password: from the RDS database
+  - Create a new schema
+- Connecting to Quarkus
+  - Add these extensions: `mvn quarkus:add-extension -Dextensions="hibernate-orm-panache,jdbc-mysql"`
+  - Add the following to the **application.properties** file:
+    ```properties
+    quarkus.datasource.db-kind=mysql
+    quarkus.datasource.username= #username to RDS instance (probably admin)
+    quarkus.datasource.password= #password to RDS instance
+    quarkus.datasource.jdbc.url=jdbc:mysql://[RDS endpoint]:3306/[schema name]
+    quarkus.hibernate-orm.database.generation=update
+    ```
+
 
 ### Misc. Notes:
 - **Ctrl + Alt + L**: Formats code in IntelliJ IDEA
