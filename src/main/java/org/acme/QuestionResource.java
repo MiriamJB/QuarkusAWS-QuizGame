@@ -23,6 +23,13 @@ public class QuestionResource {
         return Response.ok(Question.findById(id)).build();
     }
 
+    //get number of questions by id
+    @GET
+    @Path("/count/{id}")
+    public Response getQuestionCount(@PathParam("id") Long id) {
+        return Response.ok(Question.count("quizID", id)).build();
+    }
+
     // UPDATE
     // update a question
     @PUT
@@ -46,7 +53,7 @@ public class QuestionResource {
     // DELETE
     // delete a question
     @DELETE
-    @Path("question/{id}")
+    @Path("/{id}")
     @Transactional
     public Response deleteQuestion(@PathParam("id") Long id) {
         Question question = Question.findById(id);

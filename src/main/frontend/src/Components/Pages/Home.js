@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {API_URL} from "../config";
+import {API_URL} from "../../config";
 import {Link} from "react-router-dom";
-import {useAuth} from "../AuthContext";
+import {useAuth} from "../../AuthContext";
 
 // Home page for authenticated users
 function Home() {

@@ -1,0 +1,63 @@
+/* General styling for the container */
+.quiz-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for the title */
+.quiz-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Flexbox layout for quizzes */
+.quiz-grid {
+    width: 100%;
+    gap: 1rem;
+}
+
+/* Styling for individual quiz cards */
+.quiz-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    background-color: #f9f9f9;
+    transition: transform 0.2s;
+}
+
+/* Hover effect for quiz cards */
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Title of the quiz inside the card */
+.quiz-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Link button styling */
+.quiz-card a {
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Link button hover effect */
+.quiz-card a:hover {
+    background-color: darkblue;
+}

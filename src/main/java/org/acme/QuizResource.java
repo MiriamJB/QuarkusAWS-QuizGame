@@ -60,6 +60,13 @@ public class QuizResource {
         return Response.ok(new QuizAndQuestions(quiz, Question.list("quizID", id))).build();
     }
 
+    // get all public quizzes
+    @GET
+    @Path("/public")
+    public Response getPublicQuizzes() {
+        return Response.ok(Quiz.list("visibility", Quiz.Visibility.PUBLIC)).build();
+    }
+
     // UPDATE
     // to update an entire quiz and its questions
     @PUT
