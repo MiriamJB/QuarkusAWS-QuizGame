@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from "react";
 import {API_URL} from "../config";
 import {Link} from "react-router-dom";
+import {useAuth} from "../AuthContext";
 
 // Home page for authenticated users
-function App() {
+function Home() {
     const [message, setMessage] = useState("");
+    const {setSignedIn} = useAuth();
 
     useEffect(() => {
+        setSignedIn(true);
         const fetchMessage = async () => {
             const response = await fetch(`${API_URL}/api/hello`);
             const text = await response.text();
@@ -27,4 +30,4 @@ function App() {
 
 }
 
-export default App;
+export default Home;

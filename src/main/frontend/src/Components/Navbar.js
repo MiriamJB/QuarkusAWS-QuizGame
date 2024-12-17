@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import styles from './Navbar.css';
+import '@aws-amplify/ui-react/styles.css';
+import NavAuth from "./NavAuth";
+import NavUnAuth from "./NavUnAuth";
+import {useAuth} from "../AuthContext";
+import './Navbar.css';
 
-const Navbar = ({ signOut, user }) => {
-    const navigate = useNavigate();
-
-    const handleSignOut = () => {
-        signOut();
-        navigate('/');
-    };
+const Navbar = () => {
+    const {signedIn} = useAuth();
 
     return (
         <>
@@ -17,12 +15,7 @@ const Navbar = ({ signOut, user }) => {
                     Quiz Game App
                 </div>
                 <div>
-                    <Link to="/"> Landing Page </Link>
-                    <span> | </span>
-                    <Link to="/home"> Home </Link>
-                    <span> | </span>
-                    Hello, {user.username}
-                    <button onClick={handleSignOut}>Sign out</button>
+                {signedIn ? <NavAuth/> : <NavUnAuth/>}
                 </div>
             </nav>
             <hr/>

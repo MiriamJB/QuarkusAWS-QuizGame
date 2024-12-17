@@ -82,14 +82,14 @@ Starter code generated from [the Quarkus website](https://code.quarkus.io/).
   - Select 'y' to continue with Gen 1
 - Push the project to the cloud
   - `amplify push`
-- Configure the App in AWS
+- Configure the Home in AWS
   - Open the **Amplify** service in AWS
   - Find the deployed application
   - Give it permissions to access this GitHub repo
   - Select "My app is a monorepo" & enter the path to the frontend folder
   - Create/include an Amplify service role
 
-Resource: [Building a React App with Amplify (Gen 1), Cognito, and CI/CD](https://www.youtube.com/watch?v=ma1FA2be8Ac)
+Resource: [Building a React Home with Amplify (Gen 1), Cognito, and CI/CD](https://www.youtube.com/watch?v=ma1FA2be8Ac)
 
 ### Connecting the frontend to the backend in AWS:
 -Open the **API Gateway** service in AWS
@@ -112,7 +112,7 @@ Resource: [Building a React App with Amplify (Gen 1), Cognito, and CI/CD](https:
   import config from './amplifyconfiguration.json';
   Amplify.configure(config);
   ```
-- Authentication is controlled in the **AuthLayout.js** file
+- Authentication is controlled in the **RequireAuth.js** file
 
 ## Connecting to an RDS Database
 - Open the **RDS** service in AWS
