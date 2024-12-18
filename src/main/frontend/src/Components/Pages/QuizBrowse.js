@@ -25,7 +25,7 @@ function QuizBrowse() {
                             <img src={quiz.image} alt="Quiz thumbnail"/>
                             <div>
                                 <h2>{quiz.quizName}</h2>
-                                <p>Questions: {quiz.questionCount} | {quiz.timesTaken} plays</p>
+                                <p>{quiz.questionCount} questions | {quiz.timesTaken} plays</p>
                             </div>
                         </div>
                         <div style={{display:"flex", flexDirection:"column"}}>

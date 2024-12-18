@@ -17,8 +17,17 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
+    const getUserID = async () => {
+        try {
+            const {userId} = await getCurrentUser();
+            return userId;
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
-        <AuthContext.Provider value={{ signedIn, setSignedIn, checkSignIn }}>
+        <AuthContext.Provider value={{ signedIn, setSignedIn, checkSignIn, getUserID }}>
             {children}
         </AuthContext.Provider>
     );

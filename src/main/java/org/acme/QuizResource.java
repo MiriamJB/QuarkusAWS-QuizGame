@@ -67,6 +67,13 @@ public class QuizResource {
         return Response.ok(Quiz.list("visibility", Quiz.Visibility.PUBLIC)).build();
     }
 
+    // get all quizzes from one user
+    @GET
+    @Path("/user/{id}")
+    public Response getQuizzesByUser(@PathParam("id") String id) {
+        return Response.ok(Quiz.list("creatorID", id)).build();
+    }
+
     // UPDATE
     // to update an entire quiz and its questions
     @PUT

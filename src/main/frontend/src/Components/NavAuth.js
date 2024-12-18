@@ -16,7 +16,7 @@ const NavAuth = ({signOut, user}) => {
 
     return (
         <>
-            <Link to="/home"> Home </Link>
+            <Link to="/"> Home </Link>
             <span> | </span>
             Hello, {user.username}
             <span> | </span>
