@@ -52,6 +52,16 @@ public class Quiz extends PanacheEntity {
         timesTaken = 0;
     }
 
+    // constructor with image
+    public Quiz(String quizName, String creatorID, Visibility visibility, String image) {
+        this.quizName = quizName;
+        this.creatorUsername = creatorID;
+        this.visibility = visibility;
+        this.image = image;
+        this.createdDate = new Date();
+        timesTaken = 0;
+    }
+
     // getters and setters
     public String getQuizName() {
         return quizName;

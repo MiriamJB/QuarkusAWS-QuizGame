@@ -38,12 +38,12 @@
     </dependencyManagement>
 
     <dependencies>
-        <!-- TODO: it is strongly recommended to not import the entire AWS SDK... -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>aws-sdk-java</artifactId>
-            <version>2.29.37</version>
-        </dependency>
+        <!-- For Cognito access (it is strongly recommended to not import the entire AWS SDK...) -->
+<!--        <dependency>-->
+<!--            <groupId>software.amazon.awssdk</groupId>-->
+<!--            <artifactId>aws-sdk-java</artifactId>-->
+<!--            <version>2.29.37</version>-->
+<!--        </dependency>-->
         <!-- Quinoa: auto-senses the frontend environment and starts it when the backend starts. Useful for monorepos -->
         <dependency>
             <groupId>io.quarkiverse.quinoa</groupId>

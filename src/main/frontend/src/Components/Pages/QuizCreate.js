@@ -3,22 +3,15 @@ import { API_URL } from '../../config';
 import { useAuth } from "../../AuthContext";
 
 function QuizCreate() {
-    const {getUsername} = useAuth();
-    const [quiz, setQuiz] = useState({quizName: '', creatorUsername: '', visibility: 'PRIVATE'});
-    const [image, setImage] = useState(null);
+    const {username} = useAuth();
+    const [quiz, setQuiz] = useState({quizName: '', creatorUsername: username, visibility: 'PRIVATE', image: null});
     const [message, setMessage] = useState('');
-
-    useEffect(() => {
-        const fetchQuizzes = async () => {
-            const username = await getUsername();
-            setQuiz({ ...quiz, creatorUsername: username });
-        };
-        fetchQuizzes().then(() => console.log("Username fetched"));
-    }, []);
+    const [creatingQuiz, setCreatingQuiz] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setCreatingQuiz(true);
         const quizAndQuestions = {quiz: quiz, questions: []};
 
         try {
@@ -32,8 +25,7 @@ function QuizCreate() {
 
             if (response.ok) {
                 setMessage('Quiz created successfully!');
-                setQuiz({quizName: '', creatorUsername: quiz.creatorUsername, visibility: 'PRIVATE'});
-                setImage(null);
+                setQuiz({quizName: '', creatorUsername: quiz.creatorUsername, visibility: 'PRIVATE', image: null});
             } else {
                 const errorData = await response.json();
                 setMessage(`Failed to create quiz: ${errorData.error}`);
@@ -41,10 +33,11 @@ function QuizCreate() {
         } catch (error) {
             setMessage(`Error: ${error.message}`);
         }
+        setCreatingQuiz(false);
     };
 
     const handleImageChange = (e) => {
-        setImage(e.target.files[0]);
+        setQuiz({ ...quiz, image: e.target.files[0] });
     };
 
     return (
@@ -83,7 +76,7 @@ function QuizCreate() {
 
                 <div style={{ marginBottom: '20px' }}>
                     <label htmlFor='image' style={{ display: 'block', marginBottom: '5px' }}>
-                        Quiz Image:
+                        Quiz Image (optional):
                     </label>
                     <input
                         type='file'
@@ -93,19 +86,34 @@ function QuizCreate() {
                     />
                 </div>
 
-                <button
-                    type='submit'
-                    style={{
-                        backgroundColor: 'blue',
-                        color: 'white',
-                        padding: '10px 20px',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                    }}
-                >
-                    Create Quiz
-                </button>
+                {creatingQuiz ?
+                    <button
+                        style={{
+                            backgroundColor: 'blue',
+                            color: 'white',
+                            padding: '10px 20px',
+                            border: 'none',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                        }}
+                    >
+                        Creating Quiz...
+                    </button>
+                    :
+                    <button
+                        type='submit'
+                        style={{
+                            backgroundColor: 'blue',
+                            color: 'white',
+                            padding: '10px 20px',
+                            border: 'none',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                        }}
+                    >
+                        Create Quiz
+                    </button>
+                }
             </form>
 
             {message && <p style={{ marginTop: '20px', color: 'green' }}>{message}</p>}

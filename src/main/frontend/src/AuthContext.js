@@ -5,6 +5,7 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
     const [signedIn, setSignedIn] = useState(false);
+    const [username, setUsername] = useState('');
 
     const checkSignIn = async () => {
         try {
@@ -26,17 +27,17 @@ export const AuthProvider = ({ children }) => {
     //     }
     // }
 
-    const getUsername = async () => {
+    const checkUsername = async () => {
         try {
             const {username} = await getCurrentUser();
-            return username;
+            setUsername(username);
         } catch (err) {
             console.log(err);
         }
     }
 
     return (
-        <AuthContext.Provider value={{ signedIn, setSignedIn, checkSignIn, getUsername }}>
+        <AuthContext.Provider value={{ signedIn, setSignedIn, checkSignIn, username, checkUsername }}>
             {children}
         </AuthContext.Provider>
     );
