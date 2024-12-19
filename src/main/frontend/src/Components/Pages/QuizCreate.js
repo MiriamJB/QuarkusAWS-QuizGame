@@ -3,17 +3,17 @@ import { API_URL } from '../../config';
 import { useAuth } from "../../AuthContext";
 
 function QuizCreate() {
-    const {getUserID} = useAuth();
-    const [quiz, setQuiz] = useState({quizName: '', creatorID: '', visibility: 'PRIVATE'});
+    const {getUsername} = useAuth();
+    const [quiz, setQuiz] = useState({quizName: '', creatorUsername: '', visibility: 'PRIVATE'});
     const [image, setImage] = useState(null);
     const [message, setMessage] = useState('');
 
     useEffect(() => {
         const fetchQuizzes = async () => {
-            const userId = await getUserID();
-            setQuiz({ ...quiz, creatorID: userId });
+            const username = await getUsername();
+            setQuiz({ ...quiz, creatorUsername: username });
         };
-        fetchQuizzes().then(() => console.log("User ID fetched"));
+        fetchQuizzes().then(() => console.log("Username fetched"));
     }, []);
 
     const handleSubmit = async (e) => {
@@ -32,7 +32,7 @@ function QuizCreate() {
 
             if (response.ok) {
                 setMessage('Quiz created successfully!');
-                setQuiz({quizName: '', creatorID: quiz.creatorID, visibility: 'PRIVATE'});
+                setQuiz({quizName: '', creatorUsername: quiz.creatorUsername, visibility: 'PRIVATE'});
                 setImage(null);
             } else {
                 const errorData = await response.json();

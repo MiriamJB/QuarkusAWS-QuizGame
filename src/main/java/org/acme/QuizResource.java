@@ -69,9 +69,9 @@ public class QuizResource {
 
     // get all quizzes from one user
     @GET
-    @Path("/user/{id}")
-    public Response getQuizzesByUser(@PathParam("id") String id) {
-        return Response.ok(Quiz.list("creatorID", id)).build();
+    @Path("/user/{username}")
+    public Response getQuizzesByUser(@PathParam("username") String username) {
+        return Response.ok(Quiz.list("creatorUsername", username)).build();
     }
 
     // UPDATE

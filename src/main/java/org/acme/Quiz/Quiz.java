@@ -14,7 +14,7 @@ public class Quiz extends PanacheEntity {
 
     // attributes
     private String quizName;
-    private String creatorID;
+    private String creatorUsername;
     private Visibility visibility;
     private Date createdDate;
     private Date lastModifiedDate;
@@ -34,7 +34,7 @@ public class Quiz extends PanacheEntity {
     // copy constructor
     public Quiz(Quiz baseQuiz) {
         this.quizName = baseQuiz.quizName;
-        this.creatorID = baseQuiz.creatorID;
+        this.creatorUsername = baseQuiz.creatorUsername;
         this.visibility = baseQuiz.visibility;
         this.createdDate = baseQuiz.createdDate;
         this.lastModifiedDate = baseQuiz.lastModifiedDate;
@@ -46,7 +46,7 @@ public class Quiz extends PanacheEntity {
     // constructor
     public Quiz(String quizName, String creatorID, Visibility visibility) {
         this.quizName = quizName;
-        this.creatorID = creatorID;
+        this.creatorUsername = creatorID;
         this.visibility = visibility;
         this.createdDate = new Date();
         timesTaken = 0;
@@ -61,12 +61,12 @@ public class Quiz extends PanacheEntity {
         this.quizName = quizName;
     }
 
-    public String getCreatorID() {
-        return creatorID;
+    public String getCreatorUsername() {
+        return creatorUsername;
     }
 
-    public void setCreatorID(String creatorID) {
-        this.creatorID = creatorID;
+    public void setCreatorUsername(String creatorID) {
+        this.creatorUsername = creatorID;
     }
 
     public Visibility getVisibility() {

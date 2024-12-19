@@ -5,13 +5,13 @@ import './QuizBrowse.css'; // Import the CSS file
 import { useAuth } from "../../AuthContext";
 
 function QuizView() {
-    const {getUserID} = useAuth();
+    const {getUsername} = useAuth();
     const [quizzes, setQuizzes] = useState([]);
 
     useEffect(() => {
         const fetchQuizzes = async () => {
-            const userId = await getUserID();
-            const response = await fetch(`${API_URL}/api/quiz/user/${userId}`);
+            const username = await getUsername();
+            const response = await fetch(`${API_URL}/api/quiz/user/${username}`);
             const data = await response.json();
             setQuizzes(data);
         };
@@ -21,6 +21,7 @@ function QuizView() {
     return (
         <div className="quiz-container">
             <h1 className="quiz-title">Your Quizzes</h1>
+            {quizzes.length === 0 && <p>You don't have any quizzes, yet.</p>}
             <div className="quiz-grid">
                 {quizzes.map(quiz => (
                     <div key={quiz.id} className="quiz-card">

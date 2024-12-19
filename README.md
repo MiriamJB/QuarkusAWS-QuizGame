@@ -113,9 +113,6 @@ Resource: [Building a React Home with Amplify (Gen 1), Cognito, and CI/CD](https
   Amplify.configure(config);
   ```
 Authentication details are controlled in the **AuthContext.js** file
-Extra Cognito features:
-- `npm install @aws-sdk/client-cognito-identity-provider`
-- 
 
 ## Connecting to an RDS Database
 - Open the **RDS** service in AWS

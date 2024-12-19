@@ -25,7 +25,7 @@ function QuizDetails() {
         <div>
             <h1>{quiz.quizName}</h1>
             <p><strong>ID:</strong> {quiz.id}</p>
-            <p><strong>Creator:</strong> {quiz.creatorID ?? "Unknown"}</p>
+            <p><strong>Creator:</strong> {quiz.creatorUsername ?? "Unknown"}</p>
             <p><strong>Visibility:</strong> {quiz.visibility}</p>
             <p><strong>Questions:</strong> {quiz.questionCount}</p>
             <div>

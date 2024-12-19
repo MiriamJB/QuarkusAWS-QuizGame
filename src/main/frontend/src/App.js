@@ -28,7 +28,7 @@ function App() {
                     <Route path="/yours" element={<Authenticator><QuizView/></Authenticator>}/>
                     <Route path="/create" element={<Authenticator><QuizCreate/></Authenticator>}/>
                     <Route path="/browse" element={<Authenticator><QuizBrowse/></Authenticator>}/>
-                    <Route path="/browse/:quizId" element={<QuizDetails/>}/>
+                    <Route path="/browse/:quizId" element={<Authenticator><QuizDetails/></Authenticator>}/>
                 </Routes>
             </Layout>
         </BrowserRouter>

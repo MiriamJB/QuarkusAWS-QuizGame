@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@aws-sdk/client-cognito-identity-provider": "^3.714.0",
     "aws-amplify": "^6.8.0"
   }
 }
